@@ -9,3 +9,8 @@ app.register_blueprint(static.app)
 @app.route('/')
 def index():
   return static.app.send_static_file('index.html')
+
+@app.route('/hello')
+def hello():
+    return static.app.send_static_file('hello.html')
+
