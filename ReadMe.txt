@@ -9,10 +9,16 @@ deactivate
 （仮想環境を使えば、PC本体に余計なインストールがされてトラブルが起きるリスク減る）
 ファイルを実行した際に何か（moduleが～）言われたら、実行されたターミナルのパスに(venv)とついているか確認（仮想環境かどうか確認）
 
+#この後は、pip install -r requirements.txtすればいい
+
+
 ##いちいちvenv\Scripts\activate.batが面倒なとき
 コマンドパレット（Windows/Macとも Ctrl+Shift+P または Cmd+Shift+P ）を開き、"Python: Select Interpreter" と入力/選択する。
 
 一覧の中から、プロジェクトフォルダ内の venv\Scripts\python.exe（Windows）または venv/bin/python（Mac）を選ぶ。一覧に出てこなければ、"Enter interpreter path" から直接パスを指定する。こうすれば新しくターミナルが開くたび（このリポジトリ内では）仮想環境が自動で有効化される
+
+
+
 
 #main.pyの役割：web.htmlを実行してアクセス可能なローカルサーバのURLを作成する。
 #web.htmlの役割：実行されたときに表示されるサイトの見た目を作ってる。
