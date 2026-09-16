@@ -3,7 +3,7 @@ import os
 from flask import Flask
 from app import static
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder=None)  # ← static_folder=None を追加
 app.register_blueprint(static.app)
 
 @app.route('/')
@@ -13,4 +13,3 @@ def index():
 @app.route('/hello')
 def hello():
     return static.app.send_static_file('hello.html')
-

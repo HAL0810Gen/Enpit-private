@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Flask Test</title>
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
     <img src="Tsulender.png" alt="画像の説明">
+    <div class="button-area">
+        <button onclick="onClick()">仮予定登録</button>
+    </div>
 
-    <form action="/hello" method="get">
-        <button type="submit">仮予定登録</button>
-    </form>
+    <div id="list-area">
+        <h1>仮予定登録しました↓</h1>
+        <ul id="sclist"></ul>
+    </div>
 
-
+    <script src="static/js/script.js"></script>
 </body>
 </html>
