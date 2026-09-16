@@ -3,35 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Flask Test</title>
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
     <h2>Hello!</h2>
-
     <img src="Tsulender.png" alt="画像の説明">
+    <div class="button-area">
+        <button onclick="onClick()">仮予定登録</button>
+    </div>
 
-    <button type="button" id="my-button">仮予定登録</button>
 
-    <ul id="timestamp-list"></ul>
+    <div id="list-area">
+        <h1>仮予定登録しました↓</h1>
+        <ul id="sclist"></ul>
+    </div>
 
-    <script>
-        const button = document.getElementById('my-button');
-        const timestampList = document.getElementById('timestamp-list');
-
-        button.addEventListener("click", function() {
-            const now = new Date();
-
-            const hours = now.getHours();
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const seconds = String(now.getSeconds()).padStart(2, '0');
-
-            const Realtime = `仮予定：${hours}:${minutes}:${seconds}`;
-
-            const listItem = document.createElement('li');
-            listItem.textContent = Realtime;
-
-            timestampList.appendChild(listItem);
-        });
-    </script>
-
+    <script src="static/js/script.js"></script>
 </body>
 </html>
