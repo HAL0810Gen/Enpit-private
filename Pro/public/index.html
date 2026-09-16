@@ -5,12 +5,33 @@
     <title>Flask Test</title>
 </head>
 <body>
-    <img src="Tsulender.png" alt="画像の説明">
+    <h2>Hello!</h2>
 
-    <form action="/hello" method="get">
-        <button type="submit">仮予定登録</button>
-    </form>
+    <img src="image.png" alt="画像の説明">
 
+    <button type="button" id="my-button">仮予定登録</button>
+
+    <ul id="timestamp-list"></ul>
+
+    <script>
+        const button = document.getElementById('my-button');
+        const timestampList = document.getElementById('timestamp-list');
+
+        button.addEventListener("click", function() {
+            const now = new Date();
+
+            const hours = now.getHours();
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+
+            const Realtime = `仮予定：${hours}:${minutes}:${seconds}`;
+
+            const listItem = document.createElement('li');
+            listItem.textContent = Realtime;
+
+            timestampList.appendChild(listItem);
+        });
+    </script>
 
 </body>
 </html>
