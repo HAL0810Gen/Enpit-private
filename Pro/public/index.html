@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Flask Test</title>
     <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/calendar.css">
 </head>
 <body>
     <img src="Tsulendar.png" alt="画像の説明">
@@ -13,7 +14,7 @@
     </div>
 
     <div class="button-area">
-        <button onclick="onClick('今日')">今日</button>
+        <button onclick="onClick('今月')">今月</button>
     </div>
 
     <div class="button-area">
@@ -25,6 +26,39 @@
         <ul id="sclist"></ul>
     </div>
 
+    <div class = "button-area">
+        <button onclick="openCalendar()">カレンダーで確認</button>
+    </div>
+
+    <div id = "calendar-view" style = "display: none;">
+        <div class = "calendar-card">
+            <div class = "calendar-header">
+                <button id="prev-mon" aria-label="前の月">‹</button>
+                <span id ="calendar-title"></span>
+                <button id="next-mon" aria-label="次の月">›</button>
+            </div>
+
+            <div class = "calendar-grid" id = "calendar-grid"></div>
+
+            <div class="calendar-legend">
+                <span class="legend-item">
+                    <i class="dot dot-urgent"></i>３日以内
+                    <span class="legend-count" id="count-urgent">0件</span>
+                </span>
+                <span class="legend-item">
+                    <i class="dot dot-month"></i>（今月）
+                    <span class="legend-count" id="count-month">0件</span>
+                </span>
+                <span class="legend-item">
+                    <i class="dot dot-later"></i>それ以降
+                    <span class="legend-count" id="count-later">0件</span>
+                </span>
+            </div>
+            <button onclick = "closeCalendar()">戻る</button>
+        </div>
+    </div>
+
+    
     <script src="static/js/script.js"></script>
 </body>
 </html>
