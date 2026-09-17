@@ -1,9 +1,12 @@
 /*htmlの設定*/
-*{box-sizing:border-box;}
+*{
+  box-sizing:border-box;
+}
 
 /*ページ全体の設定*/
 body {
     margin: 0;
+    min-height: 100vh;
     padding: 30px 20px 50px;
 
     font-family:
@@ -16,21 +19,18 @@ body {
     color: #25213f;
     text-align: center;
 
-    background:
-        radial-gradient(
-            circle at 0% 0%,
-            #eee1f8 0,
-            #eee1f8 15%,
-            transparent 35%
-        ),
-        radial-gradient(
-            circle at 100% 40%,
-            #f3e7fa 0,
-            #f3e7fa 10%,
-            transparent 30%
-        ),
-        #ffffff;
-}
+    background: linear-gradient(
+       135deg,
+      #ffffff 0%,
+      #faf7fd 35%,
+      #f4ebfa 70%,
+      #eee1f8 100%
+    );
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
 
 /*ロゴ*/
 body > img {
@@ -43,12 +43,15 @@ body > img {
 }
 
 /*ボタン*/
-.button-area {
+.button-row {
     display : flex;
     gap: 15px;
     width: min(90%, 600px);
     margin: 0 auto 18px;
-    flex:1;
+}
+
+.button-area{
+   flex: 1;
 }
 
 .button-area button {
