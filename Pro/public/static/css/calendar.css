@@ -124,7 +124,7 @@
     width: 100%;
     max-width: 480px;
     max-height: 85vh;
-    overflow-y: none; /* 一旦スクロールを無効化 */
+    overflow-y: auto; /* 元は "none" という無効な値だったため効果なし。auto に修正し、内容が収まらない時だけスクロールさせる */
     background: #FAFAF9;
     border-radius: 20px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
@@ -155,6 +155,46 @@
     cursor: pointer;
 }
 
+/* ==== フッター固定のカレンダー表示ボタン ==== */
+.app-footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 500;
+    display: flex;
+    justify-content: center;
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+    background: rgba(244, 235, 250, 0.85); /* body背景のグラデーションに近い薄紫、半透明でなじませる */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 -1px 0 rgba(113, 61, 140, 0.08);
+}
+
+.footer-calendar-btn {
+    width: 100%;
+    max-width: 480px;
+    border: none;
+    border-radius: 999px;
+    background: #f1e5f8;
+    color: #713d8c;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 14px 20px;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(113, 61, 140, 0.08);
+    transition: 0.15s;
+}
+
+.footer-calendar-btn:hover {
+    background: #e6d5f2;
+}
+
+/* フッターが他の要素に重ならないよう、フッターの高さぶん下に空白を確保 */
+.footer-spacer {
+    height: 76px;
+}
+
 /* スマホ表示時はカレンダーの各パーツを大きく見せる */
 @media (max-width: 600px) {
     #calendar-view {
@@ -163,17 +203,25 @@
 
     .calendar-card {
         max-width: 100%;
-        padding: 16px;
+        padding: 20px 12px;
+    }
+
+    .calendar-header {
+        gap: 4px;
     }
 
     #calendar-title {
-        font-size: 2rem; /* 1.1rem → 2rem */
+        font-size: 1.5rem; /* 2.2rem だと横幅が足りず折り返していたため縮小 */
+        white-space: nowrap; /* 折り返し禁止で保険をかける */
+        flex: 1;
+        min-width: 0;
     }
 
     .calendar-header button {
-        width: 60px;  /* 36px → 60px */
-        height: 60px;
-        font-size: 1.6rem;
+        width: 52px;  /* 68px だとタイトルを圧迫しすぎていたため縮小 */
+        height: 52px;
+        font-size: 1.4rem;
+        flex-shrink: 0;
     }
 
     .calendar-grid {
@@ -181,12 +229,12 @@
     }
 
     .calendar-cell {
-        font-size: 1.5rem; /* 0.85rem → 1.5rem */
+        font-size: 1.6rem; /* 0.85rem → 1.6rem */
         border-radius: 14px;
     }
 
     .calendar-weekday {
-        font-size: 1.2rem; /* 0.75rem → 1.2rem */
+        font-size: 1.3rem; /* 0.75rem → 1.3rem */
     }
 
     .calendar-legend {
@@ -195,8 +243,8 @@
     }
 
     .dot {
-        width: 16px; /* 10px → 16px */
-        height: 16px;
+        width: 18px; /* 10px → 18px */
+        height: 18px;
     }
 
     .legend-count {
@@ -204,7 +252,16 @@
     }
 
     .calendar-card > button {
+        font-size: 1.3rem;
+        padding: 16px 30px;
+    }
+
+    .footer-calendar-btn {
         font-size: 1.2rem;
-        padding: 14px 28px;
+        padding: 18px 20px;
+    }
+
+    .footer-spacer {
+        height: 92px;
     }
 }
