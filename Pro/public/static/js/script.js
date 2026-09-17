@@ -15,7 +15,7 @@ const addsclist = (type) => {
 
     const p = document.createElement("p");
     // 表示形式を「MM月DD日 hh:mm:ss」にする例
-    p.innerText = `${type}予定：${month}月${day}日${hours}:${minutes}`;
+    p.innerText = `${type}の仮予定：${month}月${day}日${hours}:${minutes}`;
 
     div.appendChild(p);
     li.appendChild(div);
