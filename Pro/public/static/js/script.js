@@ -13,7 +13,7 @@ const addsclist = (type) => {
     div.className = "sclist";
 
     const p = document.createElement("p");
-    p.innerText = `${type}予定：${hours}:${minutes}:${seconds}`;
+    p.innerText = `${type}の仮予定：${hours}:${minutes}:${seconds}`;
 
     div.appendChild(p);
     li.appendChild(div);
