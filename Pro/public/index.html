@@ -1,32 +1,21 @@
 <!DOCTYPE html>
-<html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>Flask Test</title>
-    <link rel="stylesheet" href="static/css/style.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,user-scalable=yes">
+	<title>JavaScriptでスワイプ処理をする</title>
+	<link rel="stylesheet" href="static/css/style.css">
+	<script src="static/js/script.js" type="text/javascript"></script>
 </head>
 <body>
-    <h2>Hello!</h2>
-    <img src="Tsulender.png" alt="画像の説明">
-<div class="button-area">
-    <button onclick="onClick('３日以内')">３日以内</button>
-</div>
+	<header>
+		<h1>JavaScriptでスワイプ処理をする</h1>
+	</header>
+	
+	<div id="contents">
+		<p id="number"></p>
+		<p>左右にスワイプすると数値が増減します</p>
+	</div>
 
-<div class="button-area">
-    <button onclick="onClick('今日')">今日</button>
-</div>
-
-<div class="button-area">
-    <button onclick="onClick('それ以降')">それ以降</button>
-</div>
-
-
-
-    <div id="list-area">
-        <h1>仮予定登録しました↓</h1>
-        <ul id="sclist"></ul>
-    </div>
-
-    <script src="static/js/script.js"></script>
+	<footer><small>&copy; 2019 dianxnao.com</small></footer>
 </body>
 </html>
