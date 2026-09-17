@@ -61,16 +61,35 @@ body > img {
     border: none;
     border-radius: 35px;
 
-    background: #f1e5f8;
+    background: linear-gradient(135deg, #9b5fc0 0%, #713d8c 100%);
 
-    color: #713d8c;
+    color: #ffffff;
 
     font-size: 26px;
     font-weight: bold;
 
+    /* 折り返しても崩れないよう中央揃えに */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2;
+
     cursor: pointer;
 
-    box-shadow: 0 6px 18px rgba(113, 61, 140, 0.08);
+    box-shadow: 0 8px 20px rgba(113, 61, 140, 0.35);
 
     transition: 0.15s;
+}
+
+.button-area button:active {
+    transform: scale(0.97);
+    box-shadow: 0 4px 10px rgba(113, 61, 140, 0.35);
+}
+
+/* 幅の狭いスマホでは文字サイズを少し落として折り返しを避ける */
+@media (max-width: 400px) {
+    .button-area button {
+        font-size: 19px;
+        border-radius: 28px;
+    }
 }

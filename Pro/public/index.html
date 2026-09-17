@@ -2,7 +2,8 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>Flask Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tsulendar</title>
     <link rel="stylesheet" href="static/css/style.css">
     <link rel="stylesheet" href="static/css/calendar.css">
 </head>
@@ -26,10 +27,11 @@
         <ul id="sclist"></ul>
     </div>
 
-    <div class = "button-area">
-        <button onclick="openCalendar()">カレンダーで確認</button>
+    <div class="footer-spacer"></div>
+    <div class="app-footer">
+        <button class="footer-calendar-btn" onclick="openCalendar()">カレンダーで確認</button>
     </div>
-
+ 
     <div id = "calendar-view" style = "display: none;">
         <div class = "calendar-card">
             <div class = "calendar-header">
@@ -37,9 +39,9 @@
                 <span id ="calendar-title"></span>
                 <button id="next-mon" aria-label="次の月">›</button>
             </div>
-
+ 
             <div class = "calendar-grid" id = "calendar-grid"></div>
-
+ 
             <div class="calendar-legend">
                 <span class="legend-item">
                     <i class="dot dot-urgent"></i>３日以内
@@ -57,8 +59,8 @@
             <button onclick = "closeCalendar()">戻る</button>
         </div>
     </div>
-
-    
+ 
+ 
     <script src="static/js/script.js"></script>
 </body>
 </html>
