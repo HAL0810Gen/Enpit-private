@@ -7,23 +7,22 @@
     <link rel="stylesheet" href="static/css/calendar.css">
 </head>
 <body>
-    <img src="Tsulender.png" alt="画像の説明">
-<div class="button-area">
-    <button onclick="onClick('３日以内')">３日以内</button>
+    <img src="Tsulendar.png" alt="画像の説明">
+<div class="button-row">
+    <div class="button-area">
+        <button onclick="onClick('３日以内')">３日以内</button>
+    </div>
+
+    <div class="button-area">
+        <button onclick="onClick('今月')">今月</button>
+    </div>
+
+    <div class="button-area">
+        <button onclick="onClick('それ以降')">それ以降</button>
+    </div>
 </div>
-
-<div class="button-area">
-    <button onclick="onClick('今月')">今月</button>
-</div>
-
-<div class="button-area">
-    <button onclick="onClick('それ以降')">それ以降</button>
-</div>
-
-
 
     <div id="list-area">
-        <h1>仮予定登録しました↓</h1>
         <ul id="sclist"></ul>
     </div>
 
